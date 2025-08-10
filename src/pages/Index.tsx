@@ -1,14 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { GiftWishLanding } from '@/components/GiftWishLanding';
+
+// Sample data - in a real app, this would come from an API or URL parameters
+const sampleGiftData = {
+  id: "eea58c73-ccf3-45c2-b29c-b9b8f84c0423",
+  senderName: "John Doe",
+  senderPhone: "4323",
+  receiverName: "Jane Smith",
+  receiverPhone: "3423232",
+  relationship: "Best Friend",
+  message: "Happy Birthday Jane! Wishing you all the best 🎉",
+  occasion: "Birthday",
+  itemsOrdered: [
+    { name: "Luxury Perfume Gift Set", quantity: 1, price: "1500.00" },
+    { name: "Premium Spa Voucher", quantity: 1, price: "2500.00" },
+    { name: "Gourmet Chocolate Collection", quantity: 1, price: "750.00" }
+  ],
+  claimed: false,
+  claimedAt: null,
+  createdAt: "2025-08-07T01:13:47.000Z"
+};
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  return <GiftWishLanding data={sampleGiftData} />;
 };
 
 export default Index;
