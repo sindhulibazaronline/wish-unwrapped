@@ -5,8 +5,31 @@ import { GiftRevealGame } from './GiftRevealGame';
 import { ClaimSection } from './ClaimSection';
 import { ThankYouMessage } from './ThankYouMessage';
 
-export const BuyForFriend = ({ data }) => {
-  const [currentSection, setCurrentSection] = useState('greeting');
+interface GiftWishData {
+  id: string;
+  senderName: string;
+  senderPhone: string;
+  receiverName: string;
+  receiverPhone: string;
+  relationship: string;
+  message: string;
+  occasion: string;
+  itemsOrdered: Array<{
+    name: string;
+    quantity: number;
+    price: string;
+  }>;
+  claimed: boolean;
+  claimedAt: string | null;
+  createdAt: string;
+}
+
+interface GiftWishLandingProps {
+  data: GiftWishData;
+}
+
+export const GiftWishLanding = ({ data }: GiftWishLandingProps) => {
+  const [currentSection, setCurrentSection] = useState<'greeting' | 'game' | 'claim' | 'thanks'>('greeting');
   const [gameCompleted, setGameCompleted] = useState(false);
   const [giftClaimed, setGiftClaimed] = useState(data.claimed);
 

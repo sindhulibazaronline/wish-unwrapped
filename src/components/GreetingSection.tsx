@@ -1,10 +1,18 @@
+interface GreetingSectionProps {
+  occasion: string;
+  receiverName: string;
+  senderName: string;
+  relationship: string;
+  message: string;
+}
+
 export const GreetingSection = ({
   occasion,
   receiverName,
   senderName,
   relationship,
   message,
-}) => {
+}: GreetingSectionProps) => {
   return (
     <section className="min-h-screen flex items-center justify-center p-6 bg-gradient-celebration relative">
       <div className="text-center space-y-8 animate-bounce-in">

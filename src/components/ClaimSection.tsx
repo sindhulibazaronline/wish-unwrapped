@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Gift } from 'lucide-react';
 
-export const ClaimSection = ({ claimed, claimedAt, onClaim }) => {
+interface ClaimSectionProps {
+  claimed: boolean;
+  claimedAt: string | null;
+  onClaim: () => void;
+}
+
+export const ClaimSection = ({ claimed, claimedAt, onClaim }: ClaimSectionProps) => {
   const [isProcessing, setIsProcessing] = useState(false);
   
   const handleClaim = async () => {

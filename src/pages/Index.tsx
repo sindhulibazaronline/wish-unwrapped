@@ -1,4 +1,4 @@
-import { BuyForFriend } from '@/components/BuyForFriend';
+import { GiftWishLanding } from '@/components/GiftWishLanding';
 
 // Sample data - in a real app, this would come from an API or URL parameters
 const sampleGiftData = {
@@ -20,7 +20,7 @@ const sampleGiftData = {
 };
 
 const Index = () => {
-  return <BuyForFriend data={sampleGiftData} />;
+  return <GiftWishLanding data={sampleGiftData} />;
 };
 
 export default Index;

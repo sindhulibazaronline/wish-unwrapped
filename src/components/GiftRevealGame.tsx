@@ -2,8 +2,19 @@ import { useState } from 'react';
 import { Gift, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 
+interface GiftItem {
+  name: string;
+  quantity: number;
+  price: string;
+}
+
+interface GiftRevealGameProps {
+  gifts: GiftItem[];
+  onAllRevealed: () => void;
+}
+
 // Generate 10 gifts, using the provided gifts and filling with random ones
-const generateTenGifts = (originalGifts) => {
+const generateTenGifts = (originalGifts: GiftItem[]): GiftItem[] => {
   const additionalGifts = [
     { name: "Bluetooth Headphones", quantity: 1, price: "2000.00" },
     { name: "Premium Coffee Beans", quantity: 1, price: "800.00" },
@@ -21,13 +32,13 @@ const generateTenGifts = (originalGifts) => {
   return allGifts.slice(0, 10);
 };
 
-export const GiftRevealGame = ({ gifts, onAllRevealed }) => {
+export const GiftRevealGame = ({ gifts, onAllRevealed }: GiftRevealGameProps) => {
   const tenGifts = generateTenGifts(gifts);
-  const [selectedGift, setSelectedGift] = useState(null);
+  const [selectedGift, setSelectedGift] = useState<number | null>(null);
   const [allRevealed, setAllRevealed] = useState(false);
   const [isRevealing, setIsRevealing] = useState(false);
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => {
     if (selectedGift !== null || isRevealing) return;
     
     setIsRevealing(true);
