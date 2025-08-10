@@ -1,11 +1,6 @@
 import { CheckCircle, Heart, Sparkles } from 'lucide-react';
 
-interface ThankYouMessageProps {
-  receiverName: string;
-  senderName: string;
-}
-
-export const ThankYouMessage = ({ receiverName, senderName }: ThankYouMessageProps) => {
+export const ThankYouMessage = ({ receiverName, senderName }) => {
   return (
     <section className="min-h-screen flex items-center justify-center p-6 bg-gradient-celebration relative overflow-hidden">
       {/* Extra sparkle effects for celebration */}

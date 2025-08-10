@@ -1,15 +1,7 @@
 import { useEffect, useState } from 'react';
 
-interface ConfettiPiece {
-  id: number;
-  left: number;
-  color: string;
-  delay: number;
-  size: number;
-}
-
 export const AnimatedBackground = () => {
-  const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
+  const [confetti, setConfetti] = useState([]);
 
   useEffect(() => {
     const colors = [
