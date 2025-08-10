@@ -12,8 +12,7 @@ const sampleGiftData = {
   occasion: "Birthday",
   itemsOrdered: [
     { name: "Luxury Perfume Gift Set", quantity: 1, price: "1500.00" },
-    { name: "Premium Spa Voucher", quantity: 1, price: "2500.00" },
-    { name: "Gourmet Chocolate Collection", quantity: 1, price: "750.00" }
+    { name: "Premium Spa Voucher", quantity: 1, price: "2500.00" }
   ],
   claimed: false,
   claimedAt: null,
